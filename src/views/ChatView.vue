@@ -5,11 +5,21 @@
         Friend's <span><img src="/plus.png" width="20px" alt="" class="ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal"></span>
       </div>
       <hr>
-      <div v-for="friend in friends" :key="friend.id" class="friends" @click="friend_id = friend.id">
-        <img :src="`http://localhost:3500/image/profile/${friend.id}`" width="40px" height="40px" class="rounded-5" alt="">
-        <span>{{friend.username}}</span>
-        <span class="status"><img src="/green-circle.svg" width="10px" alt=""></span>
+
+      <div class="overflow-auto">
+        <div v-for="friend in friends" :key="friend.id" class="friends" @click="friend_id = friend.id">
+           <img :src="`http://localhost:3500/image/profile/${friend.id}`" width="40px" height="40px" class="rounded-5" alt="">
+           <span>{{friend.username}}</span>
+           <span class="status"><img src="/green-circle.svg" width="10px" alt=""></span>
+        </div>
       </div>
+
+      <div class="settins-btn">
+            <img src="/settings.svg" width="20px" alt="">
+             <span class="ms-2">setting</span>
+      </div>
+
+
 
 
     </div>
@@ -178,5 +188,17 @@ async created() {
 
 .friend-find span {
   margin-left: 20px;
+}
+.settins-btn{
+  box-shadow: 0 0 5px 3px #333;
+  cursor: pointer;
+  width: 200px;
+  margin-left: -5px !important;
+  padding: 10px;
+  position: absolute;
+  top: 92%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
 }
 </style>

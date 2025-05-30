@@ -43,6 +43,9 @@ export default {
         this.message = res.message
         this.email = ""
         this.password = ""
+        setTimeout(() => {
+          return (window.location.href = '/login');
+        }, 1000);
       }
     },
   }
