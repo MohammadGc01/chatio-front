@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="settins-btn">
+      <div class="settins-btn" @click="showsetting = !showsetting">
             <img src="/settings.svg" width="20px" alt="">
              <span class="ms-2">setting</span>
       </div>
@@ -55,6 +55,8 @@
     </div>
   </div>
 </div>
+
+   <user_setting :Show_User_Setting="showsetting"/>
   </div>
 </template>
 
@@ -62,6 +64,7 @@
 <script>
 import chat_input from '@/components/chat-input.vue'
 import chat_msg from '@/components/chat-messages.vue'
+import user_setting from '@/components/user-setting.vue'
 import { decode } from '@/utills/jwt';
 
 export default {
@@ -72,12 +75,15 @@ export default {
       users_data : [],
       user : {},
       friends: [],
-      token : localStorage.getItem("chatio_token")
+      token : localStorage.getItem("chatio_token"),
+      showsetting : false
     }
   },
   components: {
     chat_input,
-    chat_msg
+    chat_msg,
+    user_setting
+
   },
   methods : {
   async getUsers() {
