@@ -1,6 +1,5 @@
 <img src="./public/logo.png">
 
-# chatio
 
 # Project Information
 
