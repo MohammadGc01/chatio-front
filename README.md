@@ -2,9 +2,8 @@
 # chatio
 
 # Project Information
-```
-VUE 3
-```
+
+
 
 ## Project Setup
 
